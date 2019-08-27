@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chat.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,30 @@ namespace Chat
     /// </summary>
     public partial class MainWindow : Window
     {
+        EFContext context = new EFContext();
+        User user;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            user = new User()
+            {
+                FirstName=firstN.Text,
+                LastName=lastN.Text
+            };
+            context.Users.Add(user);
+            context.SaveChanges();
+
+                       
+
+
+            SomeWindow window = new SomeWindow();
+            this.Close();
+            window.ShowDialog();
+           
         }
     }
 }
