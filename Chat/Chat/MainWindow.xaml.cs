@@ -21,6 +21,7 @@ namespace Chat
     /// </summary>
     public partial class MainWindow : Window
     {
+
         EFContext context = new EFContext();
         User user;
         public MainWindow()

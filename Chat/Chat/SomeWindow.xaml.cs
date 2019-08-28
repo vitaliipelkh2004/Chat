@@ -21,13 +21,14 @@ namespace Chat
     public partial class SomeWindow : Window
     {
         EFContext context = new EFContext();
+        int id;
         public SomeWindow()
         {
             InitializeComponent();
             
             foreach (var item in context.Users)
             {
-                listUsers.Items.Add(item.FirstName);
+                listUsers.Items.Add($"{item.FirstName} {item.LastName}");
              
             }
 
@@ -35,6 +36,16 @@ namespace Chat
             {
                 listbox.Items.Add(item.Text);
             }
+        }
+
+        private void Enter_Click(object sender, RoutedEventArgs e)
+        {
+            Messesage messesage = new Messesage() {
+                Text = text.Text,
+            User_ID=id
+            };
+
+            context.Messesages.Add(messesage);
         }
     }
 }
