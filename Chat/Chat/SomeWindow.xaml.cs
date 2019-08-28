@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chat.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,21 @@ namespace Chat
     /// </summary>
     public partial class SomeWindow : Window
     {
+        EFContext context = new EFContext();
         public SomeWindow()
         {
             InitializeComponent();
+            
+            foreach (var item in context.Users)
+            {
+                listUsers.Items.Add(item.FirstName);
+             
+            }
+
+            foreach(var item in context.Messesages)
+            {
+                listbox.Items.Add(item.Text);
+            }
         }
     }
 }
