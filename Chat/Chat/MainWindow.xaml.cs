@@ -36,16 +36,19 @@ namespace Chat
                 FirstName=firstN.Text,
                 LastName=lastN.Text
             };
+            
             context.Users.Add(user);
             context.SaveChanges();
 
                        
 
 
-            SomeWindow window = new SomeWindow();
+            SomeWindow window = new SomeWindow(user.ID);
             this.Close();
             window.ShowDialog();
-           
+            context.Users.Remove(user);
+            context.SaveChanges();
+          
         }
     }
 }

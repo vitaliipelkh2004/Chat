@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Chat
 {
@@ -21,31 +22,76 @@ namespace Chat
     public partial class SomeWindow : Window
     {
         EFContext context = new EFContext();
-        int id;
-        public SomeWindow()
+        DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer timer1 = new DispatcherTimer();
+        int _id;
+        int _idother;
+        string Name;
+        string otherName;
+        public SomeWindow(int id)
         {
             InitializeComponent();
+          _id = id;
+
+           
+
+            foreach (var item in context.Messesages.ToList())
+            {
+              listbox.Items.Add($"{item.Userof.FirstName}: {item.Text}");
+            }
+            foreach(var item in context.Users)
+            {
+
+                listUsers.Items.Add($"{item.FirstName}");
+            }
             
+            timer.Interval = new TimeSpan(0, 0,1);
+            timer.Start();
+            timer.Tick += Timer_Tick;
+           
+            
+           
+        }
+
+       
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            listUsers.Items.Clear();
+            listbox.Items.Clear();
             foreach (var item in context.Users)
             {
-                listUsers.Items.Add($"{item.FirstName} {item.LastName}");
-             
+                listUsers.Items.Add($"{item.FirstName} {item.LastName}");             
             }
-
-            foreach(var item in context.Messesages)
+          
+            foreach (var item in context.Messesages.ToList())
             {
-                listbox.Items.Add(item.Text);
+                listbox.Items.Add($"{item.Userof.FirstName}: {item.Text}");
             }
+            
+          
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
             Messesage messesage = new Messesage() {
-                Text = text.Text,
-            User_ID=id
+            Text = text.Text,
+            User_ID=_id
             };
-
             context.Messesages.Add(messesage);
+            context.SaveChanges();
+            text.Clear();
+
+
+
+
+        }
+
+        private void Enter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Enter_Click(sender, e);
+            }
         }
     }
 }
