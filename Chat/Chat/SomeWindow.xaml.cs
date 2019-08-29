@@ -32,7 +32,13 @@ namespace Chat
         {
             InitializeComponent();
           _id = id;
-
+            foreach(var item in context.Users)
+            {
+                if(_id==item.ID)
+                {
+                    Name = item.FirstName;
+                }
+            }
            
 
             foreach (var item in context.Messesages.ToList())
@@ -60,7 +66,7 @@ namespace Chat
             listbox.Items.Clear();
             foreach (var item in context.Users)
             {
-                listUsers.Items.Add($"{item.FirstName} {item.LastName}");             
+                listUsers.Items.Add($"{item.FirstName}");             
             }
           
             foreach (var item in context.Messesages.ToList())
@@ -92,6 +98,17 @@ namespace Chat
             {
                 Enter_Click(sender, e);
             }
+        }
+
+        private void ListUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {                    
+                if(listUsers.SelectedValue.ToString()!=Name)
+                {
+                 MiniChat mini = new MiniChat(listUsers.SelectedValue.ToString());
+                 mini.ShowDialog();
+                }
+            
+
         }
     }
 }

@@ -10,7 +10,7 @@
         <ListBox Name="listbox" HorizontalAlignment="Left" Height="338" Margin="139,10,0,0" VerticalAlignment="Top" Width="443"/>
         <TextBox Name="text" KeyDown="Enter_KeyDown" HorizontalAlignment="Left" Height="57" Margin="10,353,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="443"/>
         <Button Name="enter"  Content="Enter" HorizontalAlignment="Left" Height="57" Margin="458,353,0,0" VerticalAlignment="Top" Width="124" FontSize="22" Click="Enter_Click"/>
-        <ListBox x:Name="listUsers" HorizontalAlignment="Left" Height="190" Margin="10,10,0,0" VerticalAlignment="Top" Width="124"/>
+        <ListBox x:Name="listUsers" MouseDoubleClick="ListUsers_MouseDoubleClick" HorizontalAlignment="Left" Height="190" Margin="10,10,0,0" VerticalAlignment="Top" Width="124"/>
 
     </Grid>
 </Window>
