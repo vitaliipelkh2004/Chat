@@ -33,7 +33,7 @@ namespace Chat
                     _id = item.ID;
             }
 
-            foreach(var item in context.Mi)
+            //foreach(var item in context.Mi)
 
         }
     }

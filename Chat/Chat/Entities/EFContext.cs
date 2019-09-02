@@ -16,6 +16,7 @@ namespace Chat.Entities
         }
        public DbSet<User> Users { get; set; }
         public DbSet<Messesage> Messesages { get; set; }
-        public DbSet<MiniChat>miniChats { get; set; }
+        public DbSet<MiniChat> MiniChats { get; set; }
+        public DbSet<UserReceiver> userReceivers { get; set; }
     }
 }

@@ -19,6 +19,5 @@ namespace Chat.Entities
         public string LastName { get; set; }
       
         public virtual ICollection<Messesage> Messesageof { get; set; }
-
-    }
+}
 }
