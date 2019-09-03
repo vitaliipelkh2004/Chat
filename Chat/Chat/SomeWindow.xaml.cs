@@ -104,7 +104,7 @@ namespace Chat
         {                    
                 if(listUsers.SelectedValue.ToString()!=Name)
                 {
-                 MiniChat mini = new MiniChat(listUsers.SelectedValue.ToString());
+                 MiniChat mini = new MiniChat(listUsers.SelectedValue.ToString(),_id);
                  mini.ShowDialog();
                 }
             

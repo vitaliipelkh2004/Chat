@@ -15,10 +15,7 @@ namespace Chat.Entities
         public int ID { get; set; }
         [Required,StringLength(200)]
         public string Text { get; set; }
-
-        [Key,ForeignKey("Userof")]
-        public int User_ID { get; set; }
-        public virtual User Userof { get; set; }
         public virtual ICollection<UserReceiver> UserReceiverof { get; set; }
+        public virtual ICollection<UserVid> UserVidof { get; set; }
     }
 }

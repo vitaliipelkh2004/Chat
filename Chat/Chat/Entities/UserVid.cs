@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace Chat.Entities
 {
-    [Table("tblUserReceiver")]
-   public class UserReceiver
+    [Table("tblUserVid")]
+    public class UserVid
     {
-        [Key,Column(Order =0)]
+        [Key, Column(Order = 0)]
         public int ID { get; set; }
-        [Key,Column(Order =1),ForeignKey("Userof")]
-        public int UserR_ID { get; set; }
-        [Key,Column(Order =2),ForeignKey("MiniChatof")]
+        [Key, Column(Order = 1), ForeignKey("Userof")]
+        public int UserV_ID { get; set; }
+        [Key, Column(Order = 2), ForeignKey("MiniChatof")]
         public int MiniChat_ID { get; set; }
 
         public virtual User Userof { get; set; }
-       
+
         public virtual MiniChat MiniChatof { get; set; }
     }
 }
