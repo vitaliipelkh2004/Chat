@@ -20,6 +20,6 @@ namespace Chat.Entities
 
         public virtual User Userof { get; set; }
        
-        public virtual MiniChat MiniChatof { get; set; }
+        public virtual Minichat MiniChatof { get; set; }
     }
 }

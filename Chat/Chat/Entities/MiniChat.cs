@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Chat.Entities
 {
     [Table("tblMiniChat")]
-   public class MiniChat
+   public class Minichat
     {
         [Key]
         public int ID { get; set; }

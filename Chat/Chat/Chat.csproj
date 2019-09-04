@@ -62,16 +62,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Entities\MiniChat.cs" />
+    <Compile Include="Entities\Minichat.cs" />
     <Compile Include="Entities\UserReceiver.cs" />
     <Compile Include="Entities\UserVid.cs" />
     <Compile Include="Migrations\201909031637213_1.cs" />
     <Compile Include="Migrations\201909031637213_1.Designer.cs">
       <DependentUpon>201909031637213_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiniChat.xaml.cs">
-      <DependentUpon>MiniChat.xaml</DependentUpon>
+    <Compile Include="Migrations\201909041522471_6.cs" />
+    <Compile Include="Migrations\201909041522471_6.Designer.cs">
+      <DependentUpon>201909041522471_6.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiniChat.cs" >
+		<DependentUpon>MiniChat.xaml</DependentUpon>
+	</Compile>
     <Compile Include="SomeWindow.xaml.cs">
       <DependentUpon>SomeWindow.xaml</DependentUpon>
     </Compile>
@@ -116,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201909031637213_1.resx">
       <DependentUpon>201909031637213_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909041522471_6.resx">
+      <DependentUpon>201909041522471_6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

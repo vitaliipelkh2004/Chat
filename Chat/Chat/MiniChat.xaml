@@ -8,7 +8,7 @@
         Title="MiniChat" Height="450" Width="389.894">
     <Grid>
         <ListBox x:Name="minilistbox" HorizontalAlignment="Left" Background="AntiqueWhite" Height="273" Margin="10,68,0,0" VerticalAlignment="Top" Width="362" FontSize="20"/>
-        <TextBox x:Name="minitext" HorizontalAlignment="Left" Height="56" Margin="10,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
+        <TextBox x:Name="minitext" KeyDown="Minitext_KeyDown" HorizontalAlignment="Left" Height="56" Margin="10,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
         <Button x:Name="minienter" Content="Enter" Click="Minienter_Click" HorizontalAlignment="Left" Height="56" Margin="255,354,0,0" VerticalAlignment="Top" Width="117" FontSize="20"/>
         <TextBox x:Name="miniName" IsEnabled="False" HorizontalAlignment="Left"   Height="53" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="362" FontSize="30"/>
 

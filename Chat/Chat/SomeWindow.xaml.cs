@@ -106,7 +106,8 @@ namespace Chat
                 {
                  MiniChat mini = new MiniChat(listUsers.SelectedValue.ToString(),_id);
                  mini.ShowDialog();
-                }
+               
+            }
             
 
         }
