@@ -35,6 +35,7 @@ namespace Chat
             {
                 FirstName=firstN.Text,
                 LastName=lastN.Text
+              
             };
             
             context.Users.Add(user);

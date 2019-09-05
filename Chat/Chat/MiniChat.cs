@@ -41,8 +41,9 @@ namespace Chat
             }
 
             timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
             timer.Tick += Timer_Tick;
+            timer.Start();
+           
 
         }
 
@@ -62,10 +63,10 @@ namespace Chat
                     )
                 .ToList())
             {
-                  if(userVid.Userof!=null)
-                minilistbox.Items.Add($"{userVid.Userof.FirstName}: {item.Text}");
-                  else if(userReceiver.Userof!=null)
-                    minilistbox.Items.Add($"{userReceiver.Userof.FirstName}: {item.Text}");
+                  if(userVid?.Userof!=null)
+                minilistbox.Items.Add($"{item.Text}");
+                  else if(userReceiver?.Userof!=null)
+                    minilistbox.Items.Add($"{item.Text}");
 
             }
            

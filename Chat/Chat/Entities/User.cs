@@ -16,8 +16,7 @@ namespace Chat.Entities
         [Required,StringLength(50)]
         public string FirstName { get; set; }
         [Required, StringLength(50)]
-        public string LastName { get; set; }
-      
+        public string LastName { get; set; }      
         public virtual ICollection<UserReceiver> UserReceivers { get; set; }
         public virtual ICollection<Messesage> Messesageof { get; set; }
         public virtual ICollection<UserVid> UserVidof { get; set; }

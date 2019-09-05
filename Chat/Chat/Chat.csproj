@@ -73,9 +73,17 @@
     <Compile Include="Migrations\201909041522471_6.Designer.cs">
       <DependentUpon>201909041522471_6.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiniChat.cs" >
-		<DependentUpon>MiniChat.xaml</DependentUpon>
-	</Compile>
+    <Compile Include="Migrations\201909051508542_10.cs" />
+    <Compile Include="Migrations\201909051508542_10.Designer.cs">
+      <DependentUpon>201909051508542_10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909051514001_11.cs" />
+    <Compile Include="Migrations\201909051514001_11.Designer.cs">
+      <DependentUpon>201909051514001_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiniChat.cs">
+      <DependentUpon>MiniChat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SomeWindow.xaml.cs">
       <DependentUpon>SomeWindow.xaml</DependentUpon>
     </Compile>
@@ -123,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909041522471_6.resx">
       <DependentUpon>201909041522471_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909051508542_10.resx">
+      <DependentUpon>201909051508542_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909051514001_11.resx">
+      <DependentUpon>201909051514001_11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
